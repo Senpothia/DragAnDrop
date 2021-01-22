@@ -62,3 +62,18 @@ function envoyer(){
 	  window.location.assign("http://localhost:8081/taches")
 	
 }
+
+function envoyer2(){
+	
+	alert('Envoi!')
+	var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	    	//alert('Envoi!')
+	    }
+	  };
+	  http.open("POST", "http://localhost:8081/taches2", true);
+	  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	  xhttp.send(tachesId); 
+	
+}
