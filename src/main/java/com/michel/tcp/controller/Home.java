@@ -29,9 +29,14 @@ public class Home {
 	}
 	
 	@PostMapping("/taches2")
-	public String receptionPost(@RequestHeader String[] tachesID[]) {
+	public String receptionPost(@RequestHeader("taches") String[] taches) {
 		
-		System.out.println("reçu!");
+		System.out.println("post: reçu!");
+		for(int i=0; i<taches.length;i++) {
+			
+			System.out.println("tache1: " + taches[i]);
+		}
+		
 		return "ok";
 	}
 

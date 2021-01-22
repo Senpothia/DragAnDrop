@@ -44,7 +44,7 @@ function valider(){
 		}
 		
 		alert('longueur taches:' + tachesId[0])
-		envoyer()
+		envoyer2()
 		
 }
 
@@ -65,15 +65,15 @@ function envoyer(){
 
 function envoyer2(){
 	
-	alert('Envoi!')
+	alert('Envoi POST!')
 	var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
 	    if (this.readyState == 4 && this.status == 200) {
 	    	//alert('Envoi!')
 	    }
 	  };
-	  http.open("POST", "http://localhost:8081/taches2", true);
-	  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	  xhttp.send(tachesId); 
+	  xhttp.open("POST", "http://localhost:8081/taches2", true);
+	  xhttp.setRequestHeader("taches", tachesId);
+	  xhttp.send(); 
 	
 }
