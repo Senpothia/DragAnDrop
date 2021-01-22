@@ -11,5 +11,20 @@ public class Home {
 		
 		return "index";
 	}
+	
+	@GetMapping("/taches")
+	public String reception() {
+		
+		System.out.println("reçu!");
+		return "ok";
+	}
+	
+	@GetMapping("/ok")
+	public String reception2() {
+		
+		System.out.println("reçu!");
+		return "ok";
+	}
+
 
 }

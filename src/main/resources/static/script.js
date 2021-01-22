@@ -2,9 +2,9 @@ const pendingTasks = document.getElementById('pending-tasks')
 const finishedTasks = document.getElementById('finished-tasks')
 var taches = [];
 var tachesId = [];
-//dataTransfer
-//setData: Establece la información que queremos compartir
-//getData: Establece la información que queremos obtener
+// dataTransfer
+// setData: Establece la información que queremos compartir
+// getData: Establece la información que queremos obtener
 pendingTasks.addEventListener('dragstart', (e) => {
     e.dataTransfer.setData('text/plain', e.target.id)
 })
@@ -17,7 +17,7 @@ pendingTasks.addEventListener('dragend', (e) => {
     e.target.classList.remove('active')
 })
 
-//OBLIGATORIO, SI NO, NO FUNCIONA
+// OBLIGATORIO, SI NO, NO FUNCIONA
 finishedTasks.addEventListener('dragover', (e) => {
     e.preventDefault()
 })
@@ -44,5 +44,21 @@ function valider(){
 		}
 		
 		alert('longueur taches:' + tachesId[0])
+		envoyer()
 		
+}
+
+function envoyer(){
+	
+	alert('Envoi!')
+	var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	    	//alert('Envoi!')
+	    }
+	  };
+	  xhttp.open("GET", "http://localhost:8081/taches", true);
+	  xhttp.send();
+	  window.location.assign("http://localhost:8081/taches")
+	
 }
