@@ -1,7 +1,5 @@
 const pendingTasks = document.getElementById('pending-tasks')
 const finishedTasks = document.getElementById('finished-tasks')
-var taches = [];
-var tachesId = [];
 //dataTransfer
 //setData: Establece la información que queremos compartir
 //getData: Establece la información que queremos obtener
@@ -28,21 +26,3 @@ finishedTasks.addEventListener('drop', (e) => {
     element.classList.remove('active')
     finishedTasks.appendChild(pendingTasks.removeChild(element))
 })
-
-function valider(){
-	
-		alert('Vous avez valider!')
-		
-		var elem = document.getElementById('finished-tasks');
-		var elint = elem.getElementsByClassName('task')
-		
-		for(i=0;i<elint.length;i++){
-			
-			taches.push(elint[i].innerHTML);
-			tachesId.push(elint[i].id);
-			
-		}
-		
-		alert('longueur taches:' + tachesId[0])
-		
-}
