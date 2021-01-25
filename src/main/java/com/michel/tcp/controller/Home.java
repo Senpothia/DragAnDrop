@@ -53,6 +53,20 @@ public class Home {
 		
 		 return new ResponseEntity<>("Hello World!", HttpStatus.OK);
 	}
+	
+	@PostMapping("/taches4")
+	public  ResponseEntity receptionPost4(@RequestHeader("taches") String[] taches) {
+		
+		System.out.println("post: reçu!");
+		for(int i=0; i<taches.length;i++) {
+			
+			System.out.println("tache1: " + taches[i]);
+		}
+		
+		   return ResponseEntity.ok()
+			        .header("key", "Bonjour!")
+			        .body("Custom header set");
+	}
 
 
 }

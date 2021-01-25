@@ -44,7 +44,7 @@ function valider(){
 		}
 		
 		alert('longueur taches:' + tachesId[0])
-		envoyer3()
+		envoyer4()   // choisir la variante pour test
 		
 }
 
@@ -106,6 +106,30 @@ function envoyer3(){
 	  })
 	  
 	  */
+	  
+	  xhttp.send(); 
+	
+}
+
+function envoyer4(){
+	
+	alert('Envoi POST!')
+	var xhttp = new XMLHttpRequest();
+	
+	 xhttp.onreadystatechange = function() {
+		    if (this.readyState == 4 && this.status == 200) {
+		    	alert('envoyer4()');
+		    	var rep =  this.getResponseHeader("key");
+		    	alert(rep);
+		    	window.location.assign("http://localhost:8081/ok")
+		    }
+		  };
+		  
+	
+	  xhttp.open("POST", "http://localhost:8081/taches4", true);
+	  xhttp.setRequestHeader("taches", tachesId);
+	  
+	
 	  
 	  xhttp.send(); 
 	
