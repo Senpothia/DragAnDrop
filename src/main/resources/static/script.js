@@ -120,7 +120,11 @@ function envoyer4(){
 		    if (this.readyState == 4 && this.status == 200) {
 		    	alert('envoyer4()');
 		    	var rep =  this.getResponseHeader("key");
-		    	alert(rep);
+		    	var repH2 =  this.getResponseHeader("key2");
+		    	var repBody = this.responseText;
+		    	alert("Header: " +  rep + "\n"
+		    			+"Header2: " +  repH2 + "\n"
+		    			+ "Body: " + repBody);
 		    	window.location.assign("http://localhost:8081/ok")
 		    }
 		  };

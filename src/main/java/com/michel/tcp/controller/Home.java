@@ -65,6 +65,7 @@ public class Home {
 		
 		   return ResponseEntity.ok()
 			        .header("key", "Bonjour!")
+			        .header("key2", "salut!")
 			        .body("Custom header set");
 	}
 
