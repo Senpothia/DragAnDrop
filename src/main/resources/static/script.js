@@ -44,7 +44,7 @@ function valider(){
 		}
 		
 		alert('longueur taches:' + tachesId[0])
-		envoyer2()
+		envoyer3()
 		
 }
 
@@ -69,11 +69,44 @@ function envoyer2(){
 	var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
 	    if (this.readyState == 4 && this.status == 200) {
-	    	//alert('Envoi!')
+	    	alert('envoyer2()');
+	    	var rep = this.responseText;
+	    	alert(rep);
+	    	window.location.assign("http://localhost:8081/ok")
 	    }
 	  };
 	  xhttp.open("POST", "http://localhost:8081/taches2", true);
 	  xhttp.setRequestHeader("taches", tachesId);
+	  xhttp.send(); 
+	
+}
+
+function envoyer3(){
+	
+	alert('Envoi POST!')
+	var xhttp = new XMLHttpRequest();
+	
+	 xhttp.onreadystatechange = function() {
+		    if (this.readyState == 4 && this.status == 200) {
+		    	alert('envoyer3()');
+		    	var rep = this.responseText;
+		    	alert(rep);
+		    	window.location.assign("http://localhost:8081/ok")
+		    }
+		  };
+		  
+	
+	  xhttp.open("POST", "http://localhost:8081/taches3", true);
+	  xhttp.setRequestHeader("taches", tachesId);
+	  
+	  /*
+	  xhttp.addEventListener('load', (data) => {
+		  
+		  console.log(JSON.parse(data.target.response))
+	  })
+	  
+	  */
+	  
 	  xhttp.send(); 
 	
 }
